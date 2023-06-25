@@ -1,27 +1,28 @@
-instalação zabbix 6.0
+# instalação zabbix 6.0
 
-$ cat/etc/*release
-
-$ free -h
-
-$ df -h
-
-$ timedatectl status
-
-$ date
-
-$ timedatectl set-timezone America/Sao_Paulo
-
-$ timedatectl list-timezones
-
-$ dnf -y install chrony
-
-$ systemctl enable --now chronyd
-
-$ systemctl status chrony
-
-$ chronyc sources
-
+#### verificação da versão do oracle linux.
+	$ cat/etc/*release
+#### mostra o memoria alocada.
+	$ free -h
+####  exibe informações sobre espaço, livre e ocupado, das partições do sistema.
+	$ df -h
+#### Exibe o time zone do sistema
+	$ timedatectl status
+#### Exibe a data do sistema.
+	$ date
+#### Configura o time zone para america são paulo.
+	$ timedatectl set-timezone America/Sao_Paulo
+#### Exibe a lista de time zone do mundo.
+	$ timedatectl list-timezones
+#### Instalação da ferramenta de ntp gerencia a hora do sistema.   
+	$ dnf -y install chrony
+#### Habilitar o chronyd na inicialização do sistema.
+	$ systemctl enable --now chronyd
+#### Exibe o status do serviço do chrony.
+	$ systemctl status chrony
+#### Exibe o serviço do chrony.
+	$ chronyc sources
+ 
 $ service chronyd restart
 
 $ systemctl status firewalld
