@@ -114,6 +114,7 @@
 	wq!
 
 	$ systemctl enable --now nginx php-fpm
+ 	$ systemctl status nginx php-fpm
 
 
 
