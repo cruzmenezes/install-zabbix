@@ -1,37 +1,36 @@
-DESATIVANDO/ATIVANDO INTERFACE GRÁFICA OU MODO TEXTO COM SYSTEMD
+# DESATIVANDO/ATIVANDO INTERFACE GRÁFICA OU MODO TEXTO COM SYSTEMD
 
+##### Dica simples e rápida de como desativar a interface gráfica e ficar apenas modo texto ou vice-versa em distribuições com SystemD.
 
+1. DESCOBRIR A CONFIGURAÇÃO ATUAL.
+   
+       $ systemctl get-default
 
-Dica simples e rápida de como desativar a interface gráfica e ficar apenas modo texto ou vice-versa em distribuições com SystemD.
+#### Se a saída for:
 
-1. DESCOBRIR A CONFIGURAÇÃO ATUAL
- systemctl get-default
+       $ graphical.target
 
-Se a saída for:
+#### Você possui um interface gráfica habilitada.
 
-graphical.target
+#### Se a saída for:
 
-Você possui um interface gráfica habilitada.
+       $ multi-user.target
 
-Se a saída for:
-
-multi-user.target
-
-Então está apenas em modo texto.
+#### Então está apenas em modo texto.
 
 2. ALTERAR DE MODO GRÁFICO PARA APENAS TEXTO
 Execute:
 
- sudo systemctl set-default multi-user.target
+       $ sudo systemctl set-default multi-user.target
 
-Feito isso, reinicie a máquina.
+#### Feito isso, reinicie a máquina.
 
 3. ALTERAR DE MODO TEXTO PARA INTERFACE GRÁFICA
 Execute:
 
- systemctl set-default graphical.target
+       $ systemctl set-default graphical.target
 
-Feito isso, reinicie a máquina.
+### Feito isso, reinicie a máquina.
 
 
 
