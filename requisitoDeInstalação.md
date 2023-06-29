@@ -40,6 +40,9 @@
 	$ dnf info mysql-server
 
 	$ dnf -y install mysql-server
+ 	$ sudo grep 'temporary password' /var/log/mysql/mysqld.log
+  	$> mysql -uroot -p 
+   	mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass4!';
 
 	$ systemctl enable --now mysqld
 
